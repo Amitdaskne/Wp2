@@ -1,9 +1,26 @@
+import java.io.File
+import java.util.Base64
+
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.kotlin.compose)
   alias(libs.plugins.google.devtools.ksp)
   alias(libs.plugins.roborazzi)
   alias(libs.plugins.secrets)
+}
+
+// Robust self-healing decode for debug keystore
+val keystoreFile = File(rootDir, "debug.keystore")
+val base64File = File(rootDir, "debug.keystore.base64")
+if (!keystoreFile.exists() && base64File.exists()) {
+    try {
+        val base64Content = base64File.readText().trim()
+        val decodedBytes = Base64.getDecoder().decode(base64Content)
+        keystoreFile.writeBytes(decodedBytes)
+        println("Successfully decoded debug.keystore from base64 at module level!")
+    } catch (e: Exception) {
+        System.err.println("Failed to decode debug.keystore at module level: ${e.message}")
+    }
 }
 
 android {

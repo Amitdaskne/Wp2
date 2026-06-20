@@ -1,0 +1,6 @@
+{
+  "name": "AmitCHAT",
+  "description": "AmitCHAT is a premium cyberpunk-styled communication app built with Firebase, Cloudinary, and WebRTC. Features rich real-time chats, voice/video calls, statuses, and advanced privacy settings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

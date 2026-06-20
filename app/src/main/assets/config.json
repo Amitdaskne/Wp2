@@ -1,0 +1,13 @@
+{
+  "firebase": {
+    "apiKey": "AIzaSyALHFd8-PhTpNSn8ipHlLsQYeUjEiBDRMs",
+    "projectId": "chat2-6bd92",
+    "databaseURL": "https://chat2-6bd92-default-rtdb.firebaseio.com",
+    "storageBucket": "chat2-6bd92.appspot.com",
+    "appId": "1:1052210817036:web:80674c39836371f46487e4"
+  },
+  "cloudinary": {
+    "cloudName": "dlsiskxua",
+    "uploadPreset": "ml_default"
+  }
+}
